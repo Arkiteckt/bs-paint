@@ -49,7 +49,11 @@ while (count <= gridWidth * gridWidth) {
 // Add queries for all your squares, palette colors, and brush here.
 // (Note the singular or plural used in that sentence!)
 
+let paletteColors = document.querySelectorAll(".palette.palette-color");
 
+let brush = document.querySelector(".current-brush");
+
+let canvasArea = document.querySelectorAll(".canvas div");
 
 /****************************
  * EVENT LISTENER FUNCTIONS *
@@ -61,6 +65,66 @@ while (count <= gridWidth * gridWidth) {
 // run as event listeners (after the next step is set up) isn't a
 // bad idea for testing purposes.
 
+/* event listener to change brush color based on color selection */
+
+for (let i= 0; i < paletteColors.length; i++){
+  paletteColors[i].addEventListener('click', function(){
+    console.log(paletteColors[i]);
+    brush.classList.replace(color-1, color-2);
+  })
+}
+
+
+brush.addEventListener('click', function(){
+  console.log(brush);
+})
+
+/*for of Loop, replace classList */
+
+ for (let square of canvasArea){
+//    square.addEventListener('click', function(){
+//      console.log(square);
+//      square.classList.replace(square.classList[1], brush.classList[1]);
+//    })
+//  }
+
+
+square.addEventListener('mouseover', function(){
+  if(mouseDown === true){
+  square.classList.replace(square.classList[1], brush.classList[1]);
+  }
+})
+}
+ //mousedown - The event occurs when the user presses a mouse button over an element
+let mouseDown = false;
+ let app = document.querySelector(".app");
+
+ app.addEventListener('mousedown', function(){
+    console.log("Mouse is down");
+    mouseDown = true;
+    console.log(`mousedown: ${mouseDown}`);
+ });
+ 
+
+ //mouseup - The event occurs when a user releases a mouse button over an element
+ app.addEventListener('mouseup', function(){
+      console.log("Mouse is up");
+      mouseDown = false;
+      console.log(`mousedown: ${mouseDown}`);
+});
+
+//  /* regualr for loop, add/remove classList */
+// for(let i = 0; i < canvasArea.length; i++){
+//   canvasArea[i].addEventListener('click', function(){
+//     // console.log(canvasArea[i]);
+//     //canvasArea[i].classList is ["square", "color-5"]
+//     //brush.classList[1];
+//     canvasArea[i].classList.remove(canvasArea[i].classList[1]);
+//     canvasArea[i].classList.add(brush.classList[1]);
+//   });
+// }
+
+//BOTH DO THE SAME THING
 
 
 /**************************
