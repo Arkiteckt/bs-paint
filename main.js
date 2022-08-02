@@ -135,3 +135,8 @@ let mouseDown = false;
 // You'll need to add the appropriate event listener for each
 // square and for each palette color from the functions you
 // wrote above.
+
+
+
+
+
